@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en"> <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <title>PRIVATE | ULTIMATE ELITE</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo1.css">
+    <style>
+        :root {
+            --bg-black: #000000;
+            --card-gray: #111111;
+            --text-pure: #ffffff;
+            --text-muted: #bcbcbc;
+            --accent: #ffffff;
+            --border-thin: rgba(255, 255, 255, 0.15);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+        body {
+            background-color: var(--bg-black);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-pure);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        nav {
+            padding: 20px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #000;
+            border-bottom: 1px solid var(--border-thin);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .back-btn {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-pure);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-logo {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            font-weight: 700;
+        }
+
+        /* --- GALLERY SECTION --- */
+        .gallery-section { padding: 25px 0; width: 100%; }
+        .mySwiper { width: 100%; padding: 0 25px; }
+        .mySwiper .swiper-slide { width: 260px; display: flex; justify-content: center; }
+        .mySwiper .swiper-slide img {
+            width: 260px;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 1px solid var(--border-thin);
+            filter: brightness(0.9);
+            box-shadow: 0 0 20px rgba(255,255,255,0.05);
+        }
+
+        /* --- VIDEO SLIDER --- */
+        .experience-slider { padding: 40px 0; width: 100%; }
+        .mySwiperExperience { width: 100%; }
+        .glass-frame {
+            width: 280px !important; 
+            height: 400px !important;
+            border-radius: 25px; 
+            overflow: hidden; 
+            border: 1px solid var(--border-thin);
+            background: #111;
+        }
+        .video-card { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.8); }
+
+        /* --- CONTENT --- */
+        .main-content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px 25px;
+            text-align: center;
+        }
+
+        .upper-title {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 4px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            display: block;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+
+        h1 {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 5px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .price-display {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 20px 0;
+            color: var(--text-pure);
+        }
+
+        .price-display span {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-left: 5px;
+        }
+
+        .description-text {
+            font-weight: 400;
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .btn-action {
+            display: block;
+            background: #ffffff;
+            color: #000000;
+            padding: 22px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            box-shadow: 0 15px 45px rgba(255,255,255,0.2);
+        }
+
+        .btn-action:hover { transform: scale(1.02); background: #f0f0f0; }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 50px;
+        }
+
+        .info-card {
+            background: var(--card-gray);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid var(--border-thin);
+            text-align: left;
+        }
+
+        .info-card h3 {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 0.55rem;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .info-card p { font-size: 0.85rem; color: var(--text-muted); }
+
+        footer { padding: 50px 25px; text-align: center; }
+        .copy { font-size: 0.7rem; color: #444; letter-spacing: 2px; }
+
+        @media (max-width: 480px) {
+            .info-grid { grid-template-columns: 1fr; }
+            .price-display { font-size: 2.8rem; }
+            .mySwiper .swiper-slide, .mySwiper .swiper-slide img { width: 220px; height: 320px; }
+            .glass-frame { width: 240px !important; height: 360px !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="PAGINA DE PACOTES.html" class="back-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            BACK
+        </a>
+        <div class="nav-logo">PRIVATE</div>
+    </nav>
+
+    <main>
+        <section class="gallery-section">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (346).jpg" alt="P1"></div>
+                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (814).jpg" alt="P2"></div>
+                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (815).jpg" alt="P3"></div>
+                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (816).jpg" alt="P4"></div>
+                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (826).jpg" alt="P5"></div>
+                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (845).jpg" alt="P6"></div>
+                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (844).jpg" alt="P7"></div>
+                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (843).jpg" alt="P8"></div>
+                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (839).jpg" alt="P9"></div>
+                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (838).jpg" alt="P10"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="main-content">
+            <span class="upper-title">THE ULTIMATE MEMBERSHIP</span>
+            <h1>ULTIMATE ELITE</h1>
+            
+            <div class="price-display">
+                97<span>USD</span>
+            </div>
+
+            <div class="inclusion-wrapper">
+                <span class="inclusion-title">📦 WHAT’S INCLUDED:</span>
+                <ul class="inclusion-list">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                       📸 Ultra-exclusive content (never used in other packages)
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                       🎥 Special videos created exclusively for this package
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        🎁 Personalized packs upon request (within clear limits)
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        💬 Direct and priority interaction
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        🔒 Content never reposted anywhere else
+                    </li> 
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        🕰️ Early access to new content
+                    </li>
+                     <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        ⛔ Extremely limited spots
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <a href="https://checkout.dodopayments.com/buy/pdt_0NV8ixjhY2iHfqWOPKwiG?quantity=1" class="btn-action">UNLOCK THE VAULT</a>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>RAW ACCESS</h3>
+                    <p>Uncensored content updated daily for members.</p>
+                </div>
+                <div class="info-card">
+                    <h3>DISCRETION</h3>
+                    <p>Secure encryption. Your secret is safe with us.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience-slider">
+            <div class="swiper mySwiperExperience">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide glass-frame">
+                        <video autoplay muted loop playsinline class="video-card"><source src="MIDIAS/VIDEOS/VIPS/VIP3/video(195).mp4"></video>
+                    </div>
+                    <div class="swiper-slide glass-frame">
+                        <video autoplay muted loop playsinline class="video-card"><source src="MIDIAS/VIDEOS/VIPS/VIP3/video(196).mp4"></video>
+                    </div>
+                    <div class="swiper-slide glass-frame">
+                        <video autoplay muted loop playsinline class="video-card"><source src="MIDIAS/VIDEOS/VIPS/VIP3/VPACOTES2 .mp4"></video>
+                    </div> 
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="copy">© 2025 PRIVATE SELECTION • THE PEAK OF EXCLUSIVITY</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiperFotos = new Swiper(".mySwiper", {
+            slidesPerView: "auto",
+            spaceBetween: 15,
+            loop: true,
+            centeredSlides: true,
+            grabCursor: true,
+            autoplay: { delay: 3000, disableOnInteraction: false },
+        });
+
+        const swiperVideos = new Swiper(".mySwiperExperience", {
+            slidesPerView: "auto",
+            spaceBetween: 20,
+            loop: true,
+            centeredSlides: true,
+            autoplay: { delay: 4000, disableOnInteraction: false },
+        });
+    </script>
+     <script src="script.js"></script>
+      <script src="/_vercel/insights/script.js" defer></script>
+</body>
+</html>

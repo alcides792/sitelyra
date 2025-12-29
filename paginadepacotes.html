@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PRIVATE | ACCESS TIERS</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --card-bg: #111111;
+            --text-main: #ffffff;
+            --text-dim: #555555;
+            --border-subtle: rgba(255, 255, 255, 0.05);
+            --border-active: rgba(255, 255, 255, 0.15);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        
+        body { 
+            background-color: var(--bg-dark); 
+            color: var(--text-main); 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden;
+        }
+
+        .container { 
+            width: 100%; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+
+        header { padding: 40px 0; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Syncopate', sans-serif; font-size: 0.6rem; letter-spacing: 5px; font-weight: 700; opacity: 0.8; }
+        .status { font-size: 0.5rem; letter-spacing: 2px; color: #4ade80; text-transform: uppercase; font-weight: 700; }
+
+        .hero { text-align: center; margin: 20px 0; }
+        .hero h1 { font-family: 'Syncopate', sans-serif; font-size: 1.8rem; letter-spacing: 12px; margin-bottom: 10px; font-weight: 700; }
+        .hero p { color: var(--text-dim); font-size: 0.7rem; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; }
+
+        .mySwiper { width: 100%; padding: 40px 0 80px !important; overflow: visible !important; }
+        .swiper-slide { width: 300px; transition: transform 0.4s ease, opacity 0.4s ease; opacity: 0.2; }
+        .swiper-slide-active { opacity: 1; transform: scale(1.05); }
+
+        .plan-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 50px 30px;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .tier-tag { font-family: 'Syncopate', sans-serif; font-size: 0.45rem; letter-spacing: 3px; color: #888; margin-bottom: 25px; display: block; font-weight: 700; }
+        .price { font-size: 3.5rem; font-weight: 700; margin-bottom: 30px; color: #ffffff; display: flex; align-items: flex-start; justify-content: center; }
+        .price span { font-size: 1rem; margin-top: 12px; opacity: 0.4; font-weight: 400; }
+        
+        .feature-list { flex-grow: 1; margin-bottom: 30px; }
+        .feature-list p { font-size: 0.8rem; color: #ccc; margin-bottom: 12px; font-weight: 400; }
+        .feature-list p strong { color: #fff; }
+
+        .btn-select {
+            display: block; width: 100%; padding: 18px; border-radius: 12px;
+            font-size: 0.7rem; font-family: 'Syncopate', sans-serif; font-weight: 700;
+            text-decoration: none; transition: 0.3s;
+            background: transparent; color: #555; border: 1px solid #333;
+            letter-spacing: 2px;
+        }
+        .swiper-slide-active .btn-select { 
+            background: #ffffff; 
+            color: #000; 
+            border: 1px solid #ffffff;
+            box-shadow: 0 10px 20px rgba(255,255,255,0.1);
+        }
+
+        .experience-slider { padding: 40px 0; }
+        .glass-frame {
+            width: 280px !important; height: 400px !important;
+            border-radius: 40px; overflow: hidden; border: 1px solid var(--border-subtle);
+            position: relative; background: rgba(255,255,255,0.03);
+        }
+        .video-card { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.8); }
+
+        .footer-details { display: flex; justify-content: space-around; padding: 60px 0; border-top: 1px solid var(--border-subtle); background: #000; }
+        .detail-item { text-align: center; }
+        .detail-item h4 { font-family: 'Syncopate', sans-serif; font-size: 0.5rem; letter-spacing: 2px; color: #555; margin-bottom: 10px; }
+        .detail-item p { font-size: 0.55rem; color: #fff; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; }
+
+        @media (max-width: 480px) {
+            .swiper-slide { width: 280px; }
+            .footer-details { flex-direction: column; gap: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo">PRIVATE.</div>
+            <div class="status">● SERVER SECURE</div>
+        </header>
+
+        <section class="hero">
+            <h1>CHOOSE YOUR ACCESS</h1>
+            <p>Unlock the vault. No limits. No censorship.</p>
+        </section>
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="plan-card">
+                        <span class="tier-tag">ESSENTIAL ACCESS</span>
+                        <div class="price">VIP1<span></span></div>
+                        <div class="feature-list">
+                            <p>Full Library Access</p>
+                            <p><strong>Weekly</strong> Content Drops</p>
+                            <p>High Definition (HD)</p>
+                            <p>Discrete Billing</p>
+                        </div>
+                        <a href="vip1.html" class="btn-select">UNLOCK NOW</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="plan-card">
+                        <span class="tier-tag">DELUXE SELECTION</span>
+                        <div class="price">VIP2<span></span></div>
+                        <div class="feature-list">
+                            <p>Everything in Essential</p>
+                            <p><strong>Daily</strong> Raw Updates</p>
+                            <p>Ultra 4K Resolution</p>
+                            <p>Behind-the-Scenes Access</p>
+                        </div>
+                        <a href="vip2.html" class="btn-select">UNLOCK NOW</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="plan-card">
+                        <span class="tier-tag">ULTIMATE ELITE</span>
+                        <div class="price">VIP3<span></span></div>
+                        <div class="feature-list">
+                            <p>The Full Experience</p>
+                            <p><strong>Real-Time</strong> Updates</p>
+                            <p>Close Friends Private Feed</p>
+                            <p>Direct VIP Requests</p>
+                        </div>
+                        <a href="vip3.html" class="btn-select">UNLOCK NOW</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <section class="experience-slider">
+            <div class="swiper mySwiperExperience">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide glass-frame">
+                        <video autoplay muted loop playsinline class="video-card"><source src="MIDIAS/VIDEOS/PACOTE/V PACOTES.mp4"></video>
+                    </div>
+                    <div class="swiper-slide glass-frame">
+                        <video autoplay muted loop playsinline class="video-card"><source src="MIDIAS/VIDEOS/PACOTE/VPACOTE.mp4"></video>
+                    </div>
+                    <div class="swiper-slide glass-frame">
+                        <video autoplay muted loop playsinline class="video-card"><source src="MIDIAS/VIDEOS/PACOTE/VPACOTES1.mp4"></video>
+                    </div> 
+                    <div class="swiper-slide glass-frame">
+                        <video autoplay muted loop playsinline class="video-card"><source src="MIDIAS/VIDEOS/PACOTE/VPACOTES2  (1).mp4"></video>
+                    </div>
+                    <div class="swiper-slide glass-frame">
+                        <video autoplay muted loop playsinline class="video-card"><source src="MIDIAS/VIDEOS/PACOTE/VPACOTE5.mp4"></video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="footer-details">
+            <div class="detail-item">
+                <h4>TOTAL PRIVACY</h4>
+                <p>ANONYMOUS ENCRYPTION</p>
+            </div>
+            <div class="detail-item">
+                <h4>INSTANT ACCESS</h4>
+                <p>AUTOMATIC UNLOCK</p>
+            </div>
+            <div class="detail-item">
+                <h4>ELITE SUPPORT</h4>
+                <p>24/7 PRIVATE CONCIERGE</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        new Swiper(".mySwiper", {
+            slidesPerView: "auto",
+            centeredSlides: true,
+            spaceBetween: 20,
+            initialSlide: 1,
+            pagination: { el: ".swiper-pagination", clickable: true }
+        });
+
+        new Swiper(".mySwiperExperience", {
+            slidesPerView: "auto",
+            centeredSlides: true,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: { delay: 3000 }
+        });
+    </script>
+     <script src="script.js"></script>
+      <script src="/_vercel/insights/script.js" defer></script>
+</body>
+</html>

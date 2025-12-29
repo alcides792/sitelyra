@@ -1,0 +1,319 @@
+/* Ajuste do Vídeo para preencher o card */
+.video-card {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz o vídeo ocupar todo o espaço sem distorcer */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Novos Cards do Final */
+.section-label {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    text-align: center;
+    margin-bottom: 30px;
+    opacity: 0.6;
+}
+
+.cards-grid-final {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.card-extra {
+    height: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.02);
+}
+
+.card-extra img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    transition: 0.5s;
+}
+
+.card-extra:hover img {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.card-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.card-extra h4 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-family: 'Syncopate', sans-serif;
+    font-size: 0.8rem;
+    z-index: 2;
+}/* estilo.css */
+:root {
+    --accent: #8b5cf6;
+    --glass: rgba(255, 255, 255, 0.03);
+    --border: rgba(255, 255, 255, 0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background: #050505;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* BACKGROUND STORM */
+.background-storm {
+    position: fixed; inset: 0; z-index: -1;
+    background: radial-gradient(circle at 50% 0%, #1a1033 0%, #050505 100%);
+}
+
+.top-glow {
+    position: absolute; top: 0; width: 100%; height: 400px;
+    background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.15), transparent);
+}
+
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* HEADER */
+.minimal-header { display: flex; justify-content: space-between; padding: 30px 0; align-items: center; }
+.logo { font-family: 'Syncopate', sans-serif; font-size: 1rem; letter-spacing: 4px; }
+.logo span { color: var(--accent); }
+.status-online { font-size: 0.6rem; color: #4ade80; letter-spacing: 2px; }
+
+/* HERO */
+.hero-reveal { text-align: center; padding: 40px 0; }
+.pre-title { font-size: 0.6rem; letter-spacing: 5px; color: var(--accent); margin-bottom: 15px; display: block; }
+.hero-reveal h1 { font-family: 'Syncopate', sans-serif; font-size: clamp(1.8rem, 8vw, 3.5rem); line-height: 1.1; margin-bottom: 20px; }
+.hero-reveal h1 span { color: transparent; -webkit-text-stroke: 1px #fff; opacity: 0.5; }
+.hero-reveal p { opacity: 0.5; max-width: 400px; margin: 0 auto; font-size: 0.9rem; line-height: 1.6; }
+
+/* SLIDER EXPERIENCE */
+.experience-slider { padding: 40px 0; }
+.glass-frame {
+    width: 280px !important; height: 400px !important;
+    border-radius: 40px; overflow: hidden; border: 1px solid var(--border);
+    position: relative; background: var(--glass);
+}
+.glass-frame img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
+.frame-content { position: absolute; bottom: 30px; left: 30px; }
+.frame-content h4 { font-family: 'Syncopate', sans-serif; font-size: 0.8rem; letter-spacing: 2px; }
+
+/* MANIFESTO GLASS BOX */
+.manifesto { margin: 40px 0; }
+.glass-box {
+    background: var(--glass); backdrop-filter: blur(20px);
+    border: 1px solid var(--border); padding: 60px 30px;
+    border-radius: 40px; text-align: center;
+}
+.glass-box h2 { font-family: 'Syncopate', sans-serif; font-size: 1.3rem; margin-bottom: 20px; line-height: 1.4; }
+
+/* BENEFITS GRID (ESTILO GLASS) */
+.benefits-grid { 
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px; margin: 40px 0; 
+}
+.benefit-item {
+    background: var(--glass); padding: 30px; border-radius: 30px;
+    border: 1px solid var(--border); text-align: center;
+}
+.benefit-item h4 { font-family: 'Syncopate', sans-serif; font-size: 0.8rem; color: var(--accent); margin: 15px 0; }
+.benefit-item p { font-size: 0.8rem; opacity: 0.5; line-height: 1.5; }
+
+/* ACTION ZONE */
+.action-zone { display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 40px 0; }
+.btn-discovery {
+    background: #fff; color: #000; padding: 20px 40px; border-radius: 50px;
+    font-weight: 700; text-decoration: none; font-size: 0.8rem; letter-spacing: 1px;
+}
+.btn-ghost {
+    color: #fff; text-decoration: none; font-size: 0.7rem; border-bottom: 1px solid var(--accent);
+    padding-bottom: 5px; opacity: 0.6;
+}
+
+/* FOOTER ELITE */
+.elite-footer { text-align: center; padding: 60px 0; border-top: 1px solid var(--border); }
+.social-icons { margin: 20px 0; font-size: 0.7rem; opacity: 0.4; letter-spacing: 2px; }
+.copy { font-size: 0.6rem; opacity: 0.3; line-height: 1.8; }
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+    .glass-frame { width: 75vw !important; height: 380px !important; }
+    .hero-reveal h1 { font-size: 2.2rem !important; }
+}
+/* Container da Grade no final */
+.vertical-cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+/* Forçando o formato Vertical (Igual ao Swiper) */
+.vertical-fix {
+    width: 280px !important; /* Largura fixa para manter vertical */
+    height: 420px !important; /* Altura maior para o look editorial */
+    flex-shrink: 0;
+    position: relative;
+    border-radius: 40px;
+    overflow: hidden;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(15px);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.vertical-fix:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+}
+
+/* Estilo do conteúdo dentro dos cards extras */
+.vertical-fix img, .vertical-fix video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.vertical-fix:hover img, .vertical-fix:hover video {
+    opacity: 1;
+}
+
+/* Ajuste Responsivo para Celular */
+@media (max-width: 768px) {
+    .vertical-cards-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .vertical-fix {
+        width: 85vw !important; /* No celular ele ocupa a largura da tela */
+        height: 450px !important;
+    }
+}
+
+/* Label da Seção */
+.section-label {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    text-align: center;
+    margin: 60px 0 30px;
+    color: var(--accent);
+    text-transform: uppercase;
+}
+/* ... (Estilos anteriores mantidos) ... */
+
+/* Garante que o slider de baixo ocupe bem o espaço */
+.extra-gallery {
+    padding: 60px 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+/* Forçando o formato Vertical idêntico aos de cima */
+.vertical-fix {
+    width: 280px !important;
+    height: 420px !important;
+    border-radius: 40px;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+}
+
+/* Estilização da tag de seção */
+.section-label {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--accent);
+}
+
+
+@media (max-width: 768px) {
+    .vertical-fix {
+        width: 240px !important;
+        height: 380px !important;
+    }
+}
+/* Adicione isso ao seu estilo.css existente */
+
+/* Estilo unificado para os vídeos nos cards */
+.video-card {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    filter: brightness(0.7); /* Deixa o vídeo mais premium e focado no texto */
+    transition: 0.5s;
+}
+
+.glass-frame:hover .video-card {
+    filter: brightness(1); /* Ganha brilho ao passar o mouse ou tocar */
+}
+
+
+/* Ajuste Responsivo para não explodir no celular */
+@media (max-width: 768px) {
+    .glass-frame {
+        width: 75vw !important;
+        height: 400px !important;
+    }
+}
+/* Remova o 'linear' anterior se estiver travando o toque */
+/* Adicione este para suavizar o retorno do movimento */
+.mySwiperBottom .swiper-wrapper {
+    transition-timing-function: ease-out !important; /* Permite que o toque seja fluido */
+}
+
+/* Garante que os cards não fiquem 'presos' ao toque */
+.swiper-free-mode > .swiper-wrapper {
+    transition-timing-function: linear !important; 
+}
+/* Efeito de esteira rolante infinita */
+.mySwiperBottom .swiper-wrapper {
+    transition-timing-function: linear !important;
+    -webkit-transition-timing-function: linear !important;
+}
+
+/* Ajuste nos cards para não bugar o clique */
+.glass-frame {
+    user-select: none;
+    -webkit-user-drag: none;
+}
