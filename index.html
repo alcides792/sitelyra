@@ -237,6 +237,12 @@
             freeMode: true
         });
     </script>
- 
+ <script>
+  // Esse código procura todos os vídeos e bloqueia o download automaticamente
+  document.querySelectorAll('video').forEach(video => {
+    video.setAttribute('controlsList', 'nodownload');
+    video.setAttribute('oncontextmenu', 'return false;');
+  });
+</script>
 </body>
 </html>
