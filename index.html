@@ -16,6 +16,26 @@
             --border: rgba(255, 255, 255, 0.12);
             --text-muted: #bcbcbc;
         }
+        /* Aplica proteção a TODOS os vídeos do site */
+video {
+  /* Bloqueia o menu de "Salvar vídeo" ao segurar o dedo (Android/iOS) */
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
+}
+
+/* Tenta esconder o botão de download no Chrome/Android */
+video::-internal-media-controls-download-button {
+    display:none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+    overflow:hidden !important;
+}
+
+video::-webkit-media-controls-panel {
+    width: calc(100% + 30px) !important; 
+}
 
         * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
 
