@@ -115,9 +115,19 @@
             text-transform: uppercase;
         }
     </style>
+    <script>
+    // Isso faz com que a barra de endereços mude para o seu site principal 
+    // assim que o cliente entra, escondendo o link secreto.
+    window.history.replaceState({}, document.title, "/");
+</script>
 </head>
 <body>
-
+<script>
+if (document.referrer === "" || !document.referrer.includes("sitelyra.vercel.app")) {
+    // Se o usuário não veio de dentro do seu site, ele é redirecionado
+    window.location.href = "index.html"; 
+}
+</script>
     <div class="ambient-glow"></div>
 
     <div class="success-card">
