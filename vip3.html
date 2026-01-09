@@ -2,19 +2,20 @@
 <html lang="en"> <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
-    <title>PRIVATE | ULTIMATE ELITE</title>
+    <title>PRIVATE | FINAL WARNING</title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="estilo1.css">
+    
     <style>
         :root {
             --bg-black: #000000;
-            --card-gray: #111111;
+            --card-gray: #080808;
             --text-pure: #ffffff;
-            --text-muted: #bcbcbc;
-            --accent: #ffffff;
-            --border-thin: rgba(255, 255, 255, 0.15);
+            --text-muted: #666666;
+            --accent: #ff0000;
+            --tg-blue: #24A1DE;
+            --border-thin: rgba(255, 255, 255, 0.08);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
@@ -23,7 +24,7 @@
             background-color: var(--bg-black);
             font-family: 'Inter', sans-serif;
             color: var(--text-pure);
-            line-height: 1.6;
+            line-height: 1.4;
             overflow-x: hidden;
         }
 
@@ -34,20 +35,7 @@
             align-items: center;
             background: #000;
             border-bottom: 1px solid var(--border-thin);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .back-btn {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-pure);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 5px;
+            position: sticky; top: 0; z-index: 1000;
         }
 
         .nav-logo {
@@ -55,218 +43,159 @@
             font-size: 0.7rem;
             letter-spacing: 3px;
             font-weight: 700;
+            color: var(--accent);
         }
 
-        /* --- GALLERY SECTION --- */
+        /* --- GALLERY --- */
         .gallery-section { padding: 25px 0; width: 100%; }
-        .mySwiper { width: 100%; padding: 0 25px; }
         .mySwiper .swiper-slide { width: 260px; display: flex; justify-content: center; }
         .mySwiper .swiper-slide img {
-            width: 260px;
-            height: 360px;
-            object-fit: cover;
-            border-radius: 15px;
-            border: 1px solid var(--border-thin);
-            filter: brightness(0.9);
-            box-shadow: 0 0 20px rgba(255,255,255,0.05);
+            width: 260px; height: 360px; object-fit: cover;
+            border-radius: 15px; border: 1px solid var(--border-thin);
         }
 
-        /* --- VIDEO SLIDER --- */
-        .experience-slider { padding: 40px 0; width: 100%; }
-        .mySwiperExperience { width: 100%; }
-        .glass-frame {
-            width: 280px !important; 
-            height: 400px !important;
-            border-radius: 25px; 
-            overflow: hidden; 
-            border: 1px solid var(--border-thin);
-            background: #111;
-        }
-        .video-card { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.8); }
-
-        /* --- CONTENT --- */
+        /* --- MAIN CONTENT --- */
         .main-content {
-            max-width: 600px;
+            max-width: 550px;
             margin: 0 auto;
             padding: 30px 25px;
             text-align: center;
         }
 
-        .upper-title {
+        .timer-box {
             font-family: 'Syncopate', sans-serif;
-            font-size: 0.6rem;
-            letter-spacing: 4px;
-            color: #ffffff;
-            margin-bottom: 15px;
-            display: block;
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
             font-weight: 700;
-            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
         }
 
         h1 {
             font-family: 'Syncopate', sans-serif;
-            font-size: 1.5rem;
-            letter-spacing: 5px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .price-display {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin: 20px 0;
-            color: var(--text-pure);
-        }
-
-        .price-display span {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            margin-left: 5px;
-        }
-
-        .description-text {
-            font-weight: 400;
-            color: var(--text-muted);
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 40px;
-        }
-
-        .btn-action {
-            display: block;
-            background: #ffffff;
-            color: #000000;
-            padding: 22px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 800;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
             letter-spacing: 1px;
-            transition: 0.3s;
-            box-shadow: 0 15px 45px rgba(255,255,255,0.2);
         }
 
-        .btn-action:hover { transform: scale(1.02); background: #f0f0f0; }
+        .sub-desc { font-size: 0.85rem; color: #888; margin-bottom: 35px; }
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 50px;
-        }
+        /* --- DETAILED CARDS --- */
+        .ticket-container { display: flex; flex-direction: column; gap: 20px; margin-bottom: 40px; }
 
-        .info-card {
+        .ticket {
             background: var(--card-gray);
-            padding: 20px;
-            border-radius: 15px;
             border: 1px solid var(--border-thin);
+            border-radius: 12px;
+            padding: 25px;
+            text-decoration: none;
+            color: white;
             text-align: left;
+            position: relative;
+            display: block;
+            transition: 0.3s;
         }
 
-        .info-card h3 {
-            font-family: 'Syncopate', sans-serif;
-            font-size: 0.55rem;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-            color: #ffffff;
+        .ticket.ultimate { border: 1px solid var(--tg-blue); background: linear-gradient(180deg, #080808 0%, #000a12 100%); }
+
+        .badge {
+            position: absolute; top: 15px; right: 15px;
+            background: var(--tg-blue);
+            font-size: 0.5rem; padding: 3px 10px;
+            border-radius: 4px; font-weight: 800; font-family: 'Syncopate';
         }
 
-        .info-card p { font-size: 0.85rem; color: var(--text-muted); }
+        .t-name { font-size: 0.8rem; color: #fff; font-weight: 800; display: block; margin-bottom: 12px; font-family: 'Syncopate'; }
+        
+        .benefits-list { list-style: none; margin-bottom: 25px; }
+        .benefits-list li { 
+            font-size: 0.8rem; 
+            color: #bbb; 
+            margin-bottom: 6px; 
+            display: flex; 
+            align-items: center; 
+            gap: 8px;
+        }
+        .benefits-list li::before { content: "✓"; color: var(--tg-blue); font-weight: bold; }
 
-        footer { padding: 50px 25px; text-align: center; }
-        .copy { font-size: 0.7rem; color: #444; letter-spacing: 2px; }
+        .t-footer { display: flex; justify-content: space-between; align-items: baseline; }
+        .t-price { font-size: 2.2rem; font-weight: 800; display: flex; align-items: baseline; }
+        .t-price span { font-size: 0.65rem; color: #444; margin-left: 5px; }
+        .t-action { font-size: 0.65rem; font-weight: 700; color: var(--tg-blue); text-transform: uppercase; letter-spacing: 1px; }
+
+        /* --- VIDEO SLIDER --- */
+        .experience-slider { padding: 40px 0; width: 100%; }
+        .glass-frame {
+            width: 280px !important; height: 400px !important;
+            border-radius: 25px; overflow: hidden; border: 1px solid var(--border-thin);
+        }
+        .video-card { width: 100%; height: 100%; object-fit: cover; }
+
+        footer { padding: 40px 25px; text-align: center; }
+        .footer-note { color: var(--accent); font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
 
         @media (max-width: 480px) {
-            .info-grid { grid-template-columns: 1fr; }
-            .price-display { font-size: 2.8rem; }
-            .mySwiper .swiper-slide, .mySwiper .swiper-slide img { width: 220px; height: 320px; }
-            .glass-frame { width: 240px !important; height: 360px !important; }
+            .t-price { font-size: 1.8rem; }
+            .mySwiper .swiper-slide img { width: 220px; height: 320px; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="paginadepacotes.html" class="back-btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            BACK
-        </a>
-        <div class="nav-logo">PRIVATE</div>
+        <div class="nav-logo">PRIVATE ACCESS ONLY</div>
+        <div style="font-size: 0.6rem; color: #4ade80; font-weight: bold;">● LIVE FEED</div>
     </nav>
 
     <main>
         <section class="gallery-section">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (346).jpg" alt="P1"></div>
-                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (814).jpg" alt="P2"></div>
-                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (815).jpg" alt="P3"></div>
-                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (816).jpg" alt="P4"></div>
-                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (826).jpg" alt="P5"></div>
-                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (845).jpg" alt="P6"></div>
-                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (844).jpg" alt="P7"></div>
-                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (843).jpg" alt="P8"></div>
-                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (839).jpg" alt="P9"></div>
-                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (838).jpg" alt="P10"></div>
+                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (346).jpg"></div>
+                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (814).jpg"></div>
+                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (815).jpg"></div>
                 </div>
             </div>
         </section>
 
         <section class="main-content">
-            <span class="upper-title">THE ULTIMATE MEMBERSHIP</span>
-            <h1>ULTIMATE ELITE</h1>
-            
-            <div class="price-display">
-                45<span>USD</span>
-            </div>
+            <div class="timer-box" id="timer">10:00</div>
+            <h1>ARE YOU IN OR ARE YOU OUT?</h1>
+            <p class="sub-desc">Access to private channels expires shortly. Choose your level of privilege below.</p>
 
-            <div class="inclusion-wrapper">
-                <span class="inclusion-title">📦 WHAT’S INCLUDED:</span>
-                <ul class="inclusion-list">
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                       📸 Ultra-exclusive content (never used in other packages)
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                       🎥 Special videos created exclusively for this package
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        🎁 Personalized packs upon request (within clear limits)
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        💬 Direct and priority interaction
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        🔒 Content never reposted anywhere else
-                    </li> 
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        🕰️ Early access to new content
-                    </li>
-                     <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        ⛔ Extremely limited spots
-                    </li>
-                    
-                </ul>
-            </div>
+            <div class="ticket-container">
+                
+                <a href="https://dodo.pe/coyote1" class="ticket">
+                    <span class="t-name">BASIC CHANNEL</span>
+                    <ul class="benefits-list">
+                        <li>Daily Updates Channel Access</li>
+                        <li>500+ RAW photos and videos</li>
+                        <li>Completely uncensored content</li>
+                        <li>Original Full HD quality</li>
+                    </ul>
+                    <div class="t-footer">
+                        <div class="t-price">25<span>USD</span></div>
+                        <div class="t-action">GET ACCESS →</div>
+                    </div>
+                </a>
 
-            <a href="https://dodo.pe/coyote" class="btn-action">UNLOCK THE VAULT</a>
+                <a href="https://dodo.pe/coyote" class="ticket ultimate">
+                    <span class="badge">LIFETIME</span>
+                    <span class="t-name" style="color: var(--tg-blue);">ULTIMATE ELITE VAULT</span>
+                    <ul class="benefits-list">
+                        <li><b>Everything</b> from Basic included</li>
+                        <li>Complete Archive (Since Day 1)</li>
+                        <li>Exclusive Content (Not on Basic)</li>
+                        <li>Lifetime Access (Pay once, stay forever)</li>
+                        <li>Private Members-Only Chat Access</li>
+                    </ul>
+                    <div class="t-footer">
+                        <div class="t-price">45<span>USD</span></div>
+                        <div class="t-action" style="color: #fff;">UNLOCK EVERYTHING →</div>
+                    </div>
+                </a>
 
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3>RAW ACCESS</h3>
-                    <p>Uncensored content updated daily for members.</p>
-                </div>
-                <div class="info-card">
-                    <h3>DISCRETION</h3>
-                    <p>Secure encryption. Your secret is safe with us.</p>
-                </div>
             </div>
         </section>
 
@@ -279,37 +208,34 @@
                     <div class="swiper-slide glass-frame">
                         <video autoplay muted loop playsinline class="video-card"><source src="MIDIAS/VIDEOS/VIPS/VIP3/video(196).mp4"></video>
                     </div>
-                    <div class="swiper-slide glass-frame">
-                        <video autoplay muted loop playsinline class="video-card"><source src="MIDIAS/VIDEOS/VIPS/VIP3/VPACOTES2 .mp4"></video>
-                    </div> 
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="copy">© 2025 PRIVATE SELECTION • THE PEAK OF EXCLUSIVITY</div>
+        <p class="footer-note">⚠️ WARNING: ACCESS LINKS ARE GENERATED ONLY ONCE PER USER.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        const swiperFotos = new Swiper(".mySwiper", {
-            slidesPerView: "auto",
-            spaceBetween: 15,
-            loop: true,
-            centeredSlides: true,
-            grabCursor: true,
-            autoplay: { delay: 3000, disableOnInteraction: false },
-        });
+        new Swiper(".mySwiper", { slidesPerView: "auto", spaceBetween: 15, loop: true, centeredSlides: true, autoplay: { delay: 3000 } });
+        new Swiper(".mySwiperExperience", { slidesPerView: "auto", spaceBetween: 20, loop: true, centeredSlides: true, autoplay: { delay: 4000 } });
 
-        const swiperVideos = new Swiper(".mySwiperExperience", {
-            slidesPerView: "auto",
-            spaceBetween: 20,
-            loop: true,
-            centeredSlides: true,
-            autoplay: { delay: 4000, disableOnInteraction: false },
-        });
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                display.textContent = minutes + ":" + seconds;
+                if (--timer < 0) { timer = 0; }
+            }, 1000);
+        }
+        window.onload = function () {
+            startTimer(600, document.querySelector('#timer'));
+        };
     </script>
- <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
