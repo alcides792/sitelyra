@@ -14,7 +14,7 @@
             --text-pure: #ffffff;
             --text-muted: #666666;
             --accent: #ff0000;
-            --tg-blue: #24A1DE;
+            --gold: #d4af37; /* Cor de luxo para o plano Ultimate */
             --border-thin: rgba(255, 255, 255, 0.08);
         }
 
@@ -46,7 +46,6 @@
             color: var(--accent);
         }
 
-        /* --- GALLERY --- */
         .gallery-section { padding: 25px 0; width: 100%; }
         .mySwiper .swiper-slide { width: 260px; display: flex; justify-content: center; }
         .mySwiper .swiper-slide img {
@@ -54,7 +53,6 @@
             border-radius: 15px; border: 1px solid var(--border-thin);
         }
 
-        /* --- MAIN CONTENT --- */
         .main-content {
             max-width: 550px;
             margin: 0 auto;
@@ -74,14 +72,13 @@
         h1 {
             font-family: 'Syncopate', sans-serif;
             font-size: 1.4rem;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .sub-desc { font-size: 0.85rem; color: #888; margin-bottom: 35px; }
 
-        /* --- DETAILED CARDS --- */
         .ticket-container { display: flex; flex-direction: column; gap: 20px; margin-bottom: 40px; }
 
         .ticket {
@@ -97,11 +94,13 @@
             transition: 0.3s;
         }
 
-        .ticket.ultimate { border: 1px solid var(--tg-blue); background: linear-gradient(180deg, #080808 0%, #000a12 100%); }
+        /* Plano Ultimate agora com borda dourada para parecer mais valioso */
+        .ticket.ultimate { border: 1px solid var(--gold); background: linear-gradient(180deg, #080808 0%, #1a1600 100%); }
 
         .badge {
             position: absolute; top: 15px; right: 15px;
-            background: var(--tg-blue);
+            background: var(--gold);
+            color: #000;
             font-size: 0.5rem; padding: 3px 10px;
             border-radius: 4px; font-weight: 800; font-family: 'Syncopate';
         }
@@ -117,14 +116,14 @@
             align-items: center; 
             gap: 8px;
         }
-        .benefits-list li::before { content: "✓"; color: var(--tg-blue); font-weight: bold; }
+        /* Checkmarks agora brancos para manter o luxo */
+        .benefits-list li::before { content: "✓"; color: #fff; font-weight: bold; }
 
         .t-footer { display: flex; justify-content: space-between; align-items: baseline; }
         .t-price { font-size: 2.2rem; font-weight: 800; display: flex; align-items: baseline; }
-        .t-price span { font-size: 0.65rem; color: #444; margin-left: 5px; }
-        .t-action { font-size: 0.65rem; font-weight: 700; color: var(--tg-blue); text-transform: uppercase; letter-spacing: 1px; }
+        .t-price span { font-size: 0.65rem; color: #666; margin-left: 5px; }
+        .t-action { font-size: 0.65rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #fff; }
 
-        /* --- VIDEO SLIDER --- */
         .experience-slider { padding: 40px 0; width: 100%; }
         .glass-frame {
             width: 280px !important; height: 400px !important;
@@ -152,64 +151,46 @@
         <section class="gallery-section">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
-              <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (346).jpg" alt="P1"></div>
-
+                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (346).jpg" alt="P1"></div>
                     <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (814).jpg" alt="P2"></div>
-
                     <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (815).jpg" alt="P3"></div>
-
                     <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (816).jpg" alt="P4"></div>
-
-                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (826).jpg" alt="P5"></div>
-
-                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (845).jpg" alt="P6"></div>
-
-                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (844).jpg" alt="P7"></div>
-
-                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (843).jpg" alt="P8"></div>
-
-                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (839).jpg" alt="P9"></div>
-
-                    <div class="swiper-slide"><img src="MIDIAS/VIPS/VIPS 3/@OnlyShareOfficial TELEGRAM (838).jpg" alt="P10"></div>
-
                 </div>
             </div>
         </section>
 
         <section class="main-content">
             <div class="timer-box" id="timer">10:00</div>
-            <h1>ARE YOU IN OR ARE YOU OUT?</h1>
-            <p class="sub-desc">Access to private channels expires shortly. Choose your level of privilege below.</p>
+            <h1>LIMITED TIME OFFER.</h1>
+            <p class="sub-desc" style="color: #fff; font-weight: bold;">Welcome price expires when the timer hits zero.</p>
 
             <div class="ticket-container">
                 
                 <a href="https://dodo.pe/coyote1" class="ticket">
-                    <span class="t-name">BASIC CHANNEL</span>
+                    <span class="t-name">BASIC ACCESS</span>
                     <ul class="benefits-list">
-                        <li>Daily Updates Channel Access</li>
+                        <li>Daily Updates Access</li>
                         <li>500+ RAW photos and videos</li>
-                        <li>Completely uncensored content</li>
-                        <li>Original Full HD quality</li>
+                        <li>Uncensored & Full HD</li>
                     </ul>
                     <div class="t-footer">
-                        <div class="t-price">25<span>USD</span></div>
-                        <div class="t-action">GET ACCESS →</div>
+                        <div class="t-price">9<span>USD</span></div>
+                        <div class="t-action">REVEAL NOW →</div>
                     </div>
                 </a>
 
                 <a href="https://dodo.pe/coyote" class="ticket ultimate">
-                    <span class="badge">LIFETIME</span>
-                    <span class="t-name" style="color: var(--tg-blue);">ULTIMATE ELITE VAULT</span>
+                    <span class="badge">BEST VALUE</span>
+                    <span class="t-name" style="color: var(--gold);">ULTIMATE ELITE VAULT</span>
                     <ul class="benefits-list">
                         <li><b>Everything</b> from Basic included</li>
-                        <li>Complete Archive (Since Day 1)</li>
-                        <li>Exclusive Content (Not on Basic)</li>
-                        <li>Lifetime Access (Pay once, stay forever)</li>
-                        <li>Private Members-Only Chat Access</li>
+                        <li>Lifetime Access (Pay Once)</li>
+                        <li>Exclusive Unseen Content</li>
+                        <li>Private Members Chat</li>
                     </ul>
                     <div class="t-footer">
-                        <div class="t-price">45<span>USD</span></div>
-                        <div class="t-action" style="color: #fff;">UNLOCK EVERYTHING →</div>
+                        <div class="t-price" style="color: var(--gold);">25<span>USD</span></div>
+                        <div class="t-action" style="color: var(--gold); border-bottom: 1px solid var(--gold);">UNLOCK EVERYTHING →</div>
                     </div>
                 </a>
 
@@ -220,23 +201,10 @@
             <div class="swiper mySwiperExperience">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide glass-frame">
-                   
                         <video autoplay muted loop playsinline class="video-card"><source src="MIDIAS/VIDEOS/VIPS/VIP3/video(195).mp4"></video>
-
                     </div>
-
                     <div class="swiper-slide glass-frame">
-
                         <video autoplay muted loop playsinline class="video-card"><source src="MIDIAS/VIDEOS/VIPS/VIP3/video(196).mp4"></video>
-
-                    </div>
-
-                    <div class="swiper-slide glass-frame">
-
-                        <video autoplay muted loop playsinline class="video-card"><source src="MIDIAS/VIDEOS/VIPS/VIP3/VPACOTES2 .mp4"></video>
-
-                    </div> 
-
                     </div>
                 </div>
             </div>
@@ -244,7 +212,7 @@
     </main>
 
     <footer>
-        <p class="footer-note">⚠️ WARNING: ACCESS LINKS ARE GENERATED ONLY ONCE PER USER.</p>
+        <p class="footer-note">⚠️ WARNING: PRICE WILL RETURN TO $45.00 SOON.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -267,6 +235,6 @@
             startTimer(600, document.querySelector('#timer'));
         };
     </script> 
-        <script defer src="/_vercel/insights/script.js"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
